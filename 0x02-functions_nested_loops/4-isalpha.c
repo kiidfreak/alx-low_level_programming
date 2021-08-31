@@ -1,19 +1,26 @@
 #include "main.h"
-#include <ctype.h>
 
 /**
- * _isalpha - prints 1 or 0 depending on input
- * @c: collects a char type
+ * test_isalpha - Test the _isalpha function
  *
- * Description: Checks for alphabets lower and uppercase
- * Return: Always(0).
+ * @n: Number to pass to _isalpha function
  */
-
-int _isalpha(int c)
+void test_isalpha(int n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-	{
-		return (1);
-	}
+	int r;
+
+	r = _isalpha(n);
+	_putchar(r + '0');
+	_putchar('\n');
+}
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	test_isalpha('H');
 	return (0);
 }
