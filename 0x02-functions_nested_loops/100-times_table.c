@@ -1,90 +1,39 @@
 #include "main.h"
+
 /**
- * print_to_98 - prints numbers to 98
- * @n: first parameter
+ * times_table - prints the 9 table
  *
- * Description: prints all num to 98
+ *  Description: prints all the nine table
  * Return: Always (0).
  */
 
-void print_to_98(int n)
+void times_table(void)
 {
-	int end;
+	int i, j, product;
 
-	end = 98;
-
-	if (n < end)
+	for (i = 0; i < 10; i++)
 	{
-		for (; n <= end; n++)
+		for (j = 0; j < 10; j++)
 		{
-			if (n == 98)
+			if (j == 0)
 			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				break;
+				_putchar(48);
+				continue;
+			}
+			product = i * j;
+			_putchar(',');
+			_putchar(' ');
+			if (product >= 10)
+			{
+				_putchar(product / 10 + 48);
+				_putchar(product % 10 + 48);
 			}
 			else
 			{
-				if (n >= -9 && n <= 9)
-				{
-					if (n < 0)
-					{
-						_putchar('-');
-						_putchar((n * -1) + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-					else if (n >= 0)
-					{
-						_putchar(n + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
-				else if (n >= 100)
-				{
-					_putchar((n / 100) + '0');
-					_putchar((n / 10) + '0');
-					_putchar((n % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar((n / 10) + '0');
-					_putchar((n % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-			}
-		}
-		_putchar('\n');
-	}
-	else if (n == 0)
-	{
-		_putchar((n / 10) + '0');
-		_putchar((n % 10) + '0');
-		_putchar('\n');
-	}
-	else
-	{
-		for (; n >= end; n--)
-		{
-			if (n == 98)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				break;
-			}
-			else
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				_putchar(',');
 				_putchar(' ');
+				_putchar(product + 48);
 			}
 		}
 		_putchar('\n');
 	}
-	return;
 }
