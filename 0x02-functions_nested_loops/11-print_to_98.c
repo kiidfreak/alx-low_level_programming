@@ -41,7 +41,7 @@ void print_to_98(int n)
 						_putchar(' ');
 					}
 				}
-				else if (n >= 100)
+				else if (n >= 111)
 				{
 					_putchar((n / 100) + '0');
 					_putchar((n / 10) + '0');
